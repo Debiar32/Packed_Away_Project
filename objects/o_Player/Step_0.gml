@@ -18,7 +18,7 @@ if (drive && !reverse) {
 }
 
 // Clamp speed to a maximum and minimum
-speed = clamp(speed, -5, 5); // Max speed is 5, min reverse speed is -5
+speed = clamp(speed, min_sp,max_sp); // Max speed is 3, min reverse speed is -2
 
 // Turning logic
 if (speed != 0) {

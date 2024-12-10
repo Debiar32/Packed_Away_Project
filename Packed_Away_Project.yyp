@@ -35,8 +35,10 @@
   "name":"Packed_Away_Project",
   "resources":[
     {"id":{"name":"o_Player","path":"objects/o_Player/o_Player.yy",},},
+    {"id":{"name":"Road_Tile","path":"objects/Road_Tile/Road_Tile.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
+    {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
