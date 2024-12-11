@@ -3,7 +3,7 @@ var left = keyboard_check(vk_left);
 var right = keyboard_check(vk_right);
 var drive = keyboard_check(vk_up);
 var reverse = keyboard_check(vk_down);
-var drift = keyboard_check_pressed(ord("Z"));
+var drift = keyboard_check(ord("Z"));
 
 // Speed variables
 if(drift){
