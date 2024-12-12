@@ -6,6 +6,15 @@ var reverse = keyboard_check(vk_down);
 var drift = keyboard_check(ord("Z"));
 
 image_angle = direction;
+if(place_meeting(x,y,Dirt_Patch)){
+acceleration = 0.1;
+debug_accel = "0.1";
+}
+else if(place_meeting(x,y,Road_Tile) || place_meeting(x,y,Corner_Road))
+{
+acceleration = 0.2;
+debug_accel = "0.2";
+}
 
 switch(Current_Car_State)
 {	case CarState.IDLE:
@@ -26,9 +35,9 @@ switch(Current_Car_State)
 	debug_State = "RUN";
 	#region
 		if (drive && !reverse) {
-    speed += 0.2; // Accelerate forward
+    speed += acceleration; // Accelerate forward
 } else if (reverse && !drive) {
-    speed -= 0.2; // Reverse
+    speed -= acceleration; // Reverse
 } else {
     if (speed > 0) {
         speed -= frc; // Gradual deceleration

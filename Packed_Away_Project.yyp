@@ -34,6 +34,8 @@
   },
   "name":"Packed_Away_Project",
   "resources":[
+    {"id":{"name":"Corner_Road","path":"objects/Corner_Road/Corner_Road.yy",},},
+    {"id":{"name":"Dirt_Patch","path":"objects/Dirt_Patch/Dirt_Patch.yy",},},
     {"id":{"name":"Enemy","path":"objects/Enemy/Enemy.yy",},},
     {"id":{"name":"GUI_MAIN","path":"objects/GUI_MAIN/GUI_MAIN.yy",},},
     {"id":{"name":"o_Player","path":"objects/o_Player/o_Player.yy",},},
@@ -46,6 +48,8 @@
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},},
     {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},},
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},},
+    {"id":{"name":"Sprite6","path":"sprites/Sprite6/Sprite6.yy",},},
+    {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

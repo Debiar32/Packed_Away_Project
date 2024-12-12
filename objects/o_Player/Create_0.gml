@@ -6,3 +6,5 @@ drifting = false;
 Current_Car_State = CarState.IDLE;
 steering = 2;
 debug_State = "IDLE";
+acceleration = 0.2;
+debug_accel = "nul";
