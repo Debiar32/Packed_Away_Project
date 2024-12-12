@@ -1,13 +1,8 @@
 direction = Rot_sp;
 image_angle = direction;
 	
-if(o_Player.speed != 0){
-	Rot_sp -= .3;
+if(o_Player.Current_Car_State = CarState.RUN){
+	while(Rot_sp <= 220){Rot_sp -= 1;}
 }
 
-if(Rot_sp <= 220){
-	Rot_sp -= .1;
-	
-}
 
-if(Rot_sp >= 330){Rot_sp += .1;}
