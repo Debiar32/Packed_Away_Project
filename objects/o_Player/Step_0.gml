@@ -86,7 +86,7 @@ image_angle = direction;#endregion
 			}
 			
 			}
-		alarm_set(0,2);
+		alarm_set(0,20);
 		Current_Car_State = CarState.RUN;
 		break	
 		

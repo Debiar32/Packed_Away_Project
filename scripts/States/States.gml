@@ -10,7 +10,7 @@ enum CarState {
 	
 	}
 	
-enum GUI_States{
+enum GUI_State {
 	Accelerating,
 	Radio_Up,
 	Radio_Down,
@@ -19,4 +19,18 @@ enum GUI_States{
 	
 
 }	
+
+enum Enemy_State{
+	IDLE,
+	DETECT,
+	CHASE,
+	ATTACK,
+	Dead
+	
+	
+	
+
+
+
+}
 }
