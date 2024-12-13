@@ -9,7 +9,7 @@ image_angle = direction;
 if(place_meeting(x,y,Dirt_Patch)){
 acceleration = 0.1;
 debug_accel = "0.1";
-frc = .05;
+frc = .07;
 
 
 }
@@ -17,7 +17,7 @@ else if(place_meeting(x,y,Road_Tile) || place_meeting(x,y,Corner_Road))
 {
 acceleration = 0.2;
 debug_accel = "0.2";
-frc = .01;
+frc = .04;
 steering = 2;
 }
 if (speed != 0) {
