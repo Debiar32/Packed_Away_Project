@@ -1,20 +1,34 @@
 // Input checks
-var left = keyboard_check(vk_left);
-var right = keyboard_check(vk_right);
-var drive = keyboard_check(vk_up);
-var reverse = keyboard_check(vk_down);
-var drift = keyboard_check(ord("Z"));
+var left = keyboard_check(vk_left) || keyboard_check(ord("A"));
+var right = keyboard_check(vk_right)||keyboard_check(ord("D"));
+var drive = keyboard_check(vk_up)||keyboard_check(ord("W"));
+var reverse = keyboard_check(vk_down)||keyboard_check(ord("S"));
+var drift = keyboard_check(ord("Z"))||keyboard_check(ord("Space"))
 
 image_angle = direction;
 if(place_meeting(x,y,Dirt_Patch)){
 acceleration = 0.1;
 debug_accel = "0.1";
+frc = .05;
+
+
 }
 else if(place_meeting(x,y,Road_Tile) || place_meeting(x,y,Corner_Road))
 {
 acceleration = 0.2;
 debug_accel = "0.2";
+frc = .01;
+steering = 2;
 }
+if (speed != 0) {
+    if (left) {
+        direction += steering;
+    }
+    if (right) {
+        direction -= steering;
+    }
+}
+
 
 switch(Current_Car_State)
 {	case CarState.IDLE:
@@ -75,29 +89,36 @@ image_angle = direction;#endregion
 		break;
 	case CarState.DRIFTING:
 		debug_State = "DRIFT";
+		frc = .1;
 		image_angle = direction;
-		speed = 10;
-		
-		if(left)
-		{
-			
-			direction += 5;
-			if(right){
-			Current_Car_State = CarState.RUN;
-			}	
-		}
-		if(right)
-		{
-			direction -= 5;
-			if(left){
-			Current_Car_State = CarState.RUN;
-			
-			}
-			
-			}
-		alarm_set(0,20);
+		if(drive){
+		speed = 5;
 		Current_Car_State = CarState.RUN;
+		}
+		else if(!drive ||reverse){
+			if (speed > 0) {
+			speed -= frc; // Gradual deceleration
+			} else if (speed < 0) {
+			speed += frc; // Gradual deceleration
+    }
+		}
+		steering = 4;
+		if(left && speed != 0)
+		{
+			
+			direction += steering;
+		
+		}
+		if(right && speed != 0)
+		{
+			direction -= steering;
+		}
+		
+		
+		if(speed == 0){Current_Car_State = CarState.IDLE;}
+		
 		break	
+		
 		
 		
 		
